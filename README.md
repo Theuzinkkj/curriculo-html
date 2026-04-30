@@ -2,9 +2,8 @@
 
 Currículo pessoal desenvolvido em HTML, com design moderno e responsivo.
 
-# 🛠️ Tecnologias
+# 🛠️ Tecnologias usadas
 - HTML5
-- CSS3
 
 # 📌 Sobre
 Currículo desenvolvido para apresentar minha trajetória profissional e habilidades
