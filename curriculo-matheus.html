@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo – Matheus de Souza Silva</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a2744;
+    --navy-mid: #2a3d6b;
+    --accent: #2563eb;
+    --accent-light: #e8effd;
+    --text: #1e1e2e;
+    --muted: #5a5f7a;
+    --border: #d4d8e8;
+    --bg: #f7f8fc;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(26,39,68,0.12);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 2.5rem 2.8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(37,99,235,0.18);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: 80px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(37,99,235,0.1);
+  }
+
+  .header-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.35rem;
+    position: relative;
+  }
+
+  .header-contact {
+    color: rgba(255,255,255,0.72);
+    font-size: 13px;
+    font-weight: 300;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .header-contact span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .header-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.2rem;
+    position: relative;
+  }
+
+  .header-links a {
+    color: #93b8f8;
+    font-size: 12.5px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .header-links a:hover { color: #fff; }
+
+  /* BODY */
+  .body {
+    padding: 0 2.8rem 2.5rem;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 1.8rem;
+  }
+
+  .section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  /* OBJETIVO */
+  .objetivo-text {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  /* HABILIDADES */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem;
+    margin-top: 0.2rem;
+  }
+
+  .skill-item {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .skill-item strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* PROJETO */
+  .project-card {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 0.85rem 1rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .project-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .project-name a {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .project-name a:hover { text-decoration: underline; }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* EXPERIÊNCIA */
+  .exp-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.1rem;
+  }
+
+  .exp-company {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .exp-period {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .exp-bullets li {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+  }
+
+  /* FORMAÇÃO */
+  .edu-item {
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-degree {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .edu-status {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* CURSOS */
+  .courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 2rem;
+  }
+
+  .course-item {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .course-item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+  }
+
+  /* DIVIDER */
+  .exp-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1rem 0;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; max-width: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .body { padding: 0 1.2rem 2rem; }
+    .header { padding: 2rem 1.2rem 1.5rem; }
+    .skills-grid, .courses-grid { grid-template-columns: 1fr; }
+    .exp-header { flex-direction: column; }
+    .header-name { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="header-name">Matheus de Souza Silva</h1>
+    <div class="header-contact">
+      <span>Bragança Paulista – SP</span>
+      <span>(11) 99793-1314</span>
+      <span>souzinha1827272@gmail.com</span>
+    </div>
+    <div class="header-links">
+      <a href="https://linkedin.com/in/matheus-souza-9a89b2260" target="_blank">linkedin.com/in/matheus-souza-9a89b2260</a>
+      <span style="color:rgba(255,255,255,0.3)">|</span>
+      <a href="https://github.com/Theuzinkkj" target="_blank">github.com/Theuzinkkj</a>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- OBJETIVO -->
+    <section class="section">
+      <div class="section-title">Objetivo</div>
+      <p class="objetivo-text">
+        Atuar como Desenvolvedor de Software, aplicando meus conhecimentos em desenvolvimento web (HTML, CSS, JavaScript) e contribuindo para projetos reais enquanto aprofundo minha formação em desenvolvimento Full Stack.
+      </p>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="section">
+      <div class="section-title">Habilidades Técnicas</div>
+      <div class="skills-grid">
+        <div class="skill-item"><strong>Linguagens e tecnologias:</strong> HTML5, CSS3, JavaScript, lógica de programação</div>
+        <div class="skill-item"><strong>Ferramentas:</strong> Git, GitHub, Excel Intermediário</div>
+        <div class="skill-item"><strong>Suporte técnico:</strong> Help Desk, suporte remoto, resolução de chamados, atendimento ao usuário</div>
+        <div class="skill-item"><strong>Idiomas:</strong> Português (nativo)</div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section">
+      <div class="section-title">Projetos Pessoais</div>
+      <div class="project-card">
+        <div class="project-name">
+          Pokédex
+          <a href="https://github.com/Theuzinkkj/Pok-dex" target="_blank">↗ github.com/Theuzinkkj/Pok-dex</a>
+        </div>
+        <p class="project-desc">
+          Aplicação web desenvolvida do zero com HTML, CSS e JavaScript puro, consumindo a PokéAPI para exibir dados dinâmicos dos Pokémons. Projeto desenvolvido de forma independente, sem auxílio de cursos, demonstrando capacidade de autoaprendizado e resolução de problemas.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="section">
+      <div class="section-title">Experiência Profissional</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">IK Ecossistema e Inovação</div>
+          <div class="exp-period">Março/2026 – Atual</div>
+        </div>
+        <div class="exp-role">Analista de Suporte</div>
+        <ul class="exp-bullets">
+          <li>Atendimento e resolução de chamados e tickets técnicos</li>
+          <li>Suporte remoto a usuários com foco em agilidade e satisfação</li>
+          <li>Diagnóstico e resolução de problemas de sistemas e softwares</li>
+          <li>Documentação e acompanhamento de ocorrências</li>
+        </ul>
+      </div>
+
+      <div class="exp-divider"></div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">Stabil FGTS</div>
+          <div class="exp-period">4 meses</div>
+        </div>
+        <div class="exp-role">Help Desk</div>
+        <ul class="exp-bullets">
+          <li>Suporte técnico e esclarecimento de dúvidas sobre sistemas e serviços</li>
+          <li>Resolução de chamados com acompanhamento até a conclusão</li>
+          <li>Suporte remoto e orientação ao usuário</li>
+        </ul>
+      </div>
+
+      <div class="exp-divider"></div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">Vendedor de FGTS</div>
+          <div class="exp-period">2 anos</div>
+        </div>
+        <div class="exp-role">Vendas e Atendimento</div>
+        <ul class="exp-bullets">
+          <li>Atendimento direto ao cliente e prospecção ativa</li>
+          <li>Negociação e apresentação de produtos e serviços</li>
+          <li>Cumprimento consistente de metas e foco em resultados</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section class="section">
+      <div class="section-title">Formação Acadêmica</div>
+
+      <div class="edu-item">
+        <div class="edu-degree">Análise e Desenvolvimento de Sistemas</div>
+        <div class="edu-status">Cursando</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Técnico em Administração</div>
+        <div class="edu-status">Completo</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Ensino Médio</div>
+        <div class="edu-status">Completo</div>
+      </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section class="section">
+      <div class="section-title">Cursos Complementares</div>
+      <div class="courses-grid">
+        <div class="course-item">Desenvolvimento Full Stack – Rocketseat (Cursando)</div>
+        <div class="course-item">JavaScript – Alura (Concluído)</div>
+        <div class="course-item">CSS3 – Alura</div>
+        <div class="course-item">HTML – Alura</div>
+        <div class="course-item">Excel Intermediário</div>
+        <div class="course-item">Lógica de Programação – SENAI</div>
+        <div class="course-item">Tecnologia da Comunicação e Informação – SENAI</div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</body>
+</html>
